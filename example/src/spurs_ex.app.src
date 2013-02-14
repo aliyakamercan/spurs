@@ -1,0 +1,14 @@
+{application, spurs_ex,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  spurs,
+                  cowboy
+                 ]},
+  {mod, { spurs_ex_app, []}},
+  {env, []}
+ ]}.
