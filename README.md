@@ -75,7 +75,7 @@ You can set the following options:
     {spurs, [
         {expiry, 3600 * 24 * 3} % session expiration time in seconds - defaults to 3 days
         ,{cookie_opt, []} % cookie options - defaults to [{http_only, true}, {path, <<"/">>}]
-        ,{backend, spurs_cache} % backend - defaults to spurs_cache --see todo
+        ,{backend, spurs_cache} % backend - defaults to spurs_cache(ets) --see todo
     ]}
 ].
 
