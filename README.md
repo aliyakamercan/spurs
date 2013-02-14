@@ -1,7 +1,7 @@
 Spurs
 =====
 
-A session manager for cowboy. 
+A session manager for cowboy. It is a middleware which adds session details to handler_opts.
 
 Usage
 -----
@@ -16,7 +16,7 @@ Example
 ```erlang
     
     {ok, _} = cowboy:start_http(http, 100, [{port, 8080}], [
-		{env, [{dispatch, Dispatch}]}
+    	{env, [{dispatch, Dispatch}]}
         ,{middlewares, [cowboy_router, spurs_middleware, cowboy_handler]}
 	]),
 
@@ -62,6 +62,8 @@ terminate(_Reason, _Req, State) ->
     ok.
     
 ```
+
+You can also use set_p/3 and get_n/2 (instead of set/3 & get/2) to write changes immediately and get the newest value. This might be needed if there are multiple handlers simultaneously for the same session.
 
 Options
 --------
